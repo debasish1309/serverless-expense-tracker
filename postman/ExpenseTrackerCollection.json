@@ -1,0 +1,71 @@
+{
+  "info": {
+    "name": "Expense Tracker API",
+    "_postman_id": "unique-id-generated-by-postman",
+    "description": "Postman collection for testing Serverless Expense Tracker APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Add Expense",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"amount\": 150,\n  \"category\": \"Groceries\",\n  \"date\": \"2025-06-22\"\n}"
+        },
+        "url": {
+          "raw": "https://your-api-id.execute-api.region.amazonaws.com/expense",
+          "protocol": "https",
+          "host": ["your-api-id", "execute-api", "region", "amazonaws", "com"],
+          "path": ["expense"]
+        }
+      }
+    },
+    {
+      "name": "Get Expense",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://your-api-id.execute-api.region.amazonaws.com/expense?expense_id={{expense_id}}",
+          "protocol": "https",
+          "host": ["your-api-id", "execute-api", "region", "amazonaws", "com"],
+          "path": ["expense"],
+          "query": [{"key": "expense_id", "value": "{{expense_id}}"}]
+        }
+      }
+    },
+    {
+      "name": "Update Expense",
+      "request": {
+        "method": "PUT",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"expense_id\": \"{{expense_id}}\",\n  \"amount\": 200,\n  \"category\": \"Utilities\",\n  \"date\": \"2025-06-23\"\n}"
+        },
+        "url": {
+          "raw": "https://your-api-id.execute-api.region.amazonaws.com/expense",
+          "protocol": "https",
+          "host": ["your-api-id", "execute-api", "region", "amazonaws", "com"],
+          "path": ["expense"]
+        }
+      }
+    },
+    {
+      "name": "Delete Expense",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "https://your-api-id.execute-api.region.amazonaws.com/expense?expense_id={{expense_id}}",
+          "protocol": "https",
+          "host": ["your-api-id", "execute-api", "region", "amazonaws", "com"],
+          "path": ["expense"],
+          "query": [{"key": "expense_id", "value": "{{expense_id}}"}]
+        }
+      }
+    }
+  ]
+}
