@@ -1,19 +1,16 @@
 # 💸 Serverless Expense Tracker
 
-A fully serverless, cloud-native expense management system built with **AWS Lambda**, **Amazon API Gateway**, **Amazon DynamoDB**, and **Python (Boto3)**. This solution eliminates infrastructure overhead while providing secure, scalable, and cost-effective tracking of personal expenses via RESTful APIs.
+A fully serverless, cloud-native expense management system built with **AWS Lambda**, **Amazon API Gateway**, **Amazon DynamoDB**, and **Python (Boto3)**. This solution eliminates infrastructure overhead while providing secure, scalable, and cost-effective expense tracking via RESTful APIs.
 
 ## 🚀 Features
 
 - Serverless backend powered by AWS Lambda
 - CRUD operations for managing expenses
-- RESTful API endpoints via API Gateway
+- RESTful API endpoints via Amazon API Gateway
 - NoSQL data storage with Amazon DynamoDB (On-Demand)
 - Written in Python using Boto3 for seamless AWS integration
-- Logging and observability with Amazon CloudWatch
-- API testing with Postman
-
-## 🧱 Architecture
-Client ↔️ API Gateway ↔️ Lambda (Python) ↔️ DynamoDB
+- Logging and observability using Amazon CloudWatch
+- API testing using Postman
 
 ## ⚙️ AWS Setup Guide
 
@@ -31,12 +28,12 @@ Client ↔️ API Gateway ↔️ Lambda (Python) ↔️ DynamoDB
 
 ### 3. Lambda Logic
 
-- `POST /expense` → Add new expense  
-- `GET /expense?expense_id=xyz` → Retrieve expense  
-- `PUT /expense` → Update expense details  
-- `DELETE /expense?expense_id=xyz` → Delete expense  
+- `POST /expense` → Add new expense
+- `GET /expense?expense_id=xyz` → Retrieve expense
+- `PUT /expense` → Update expense details
+- `DELETE /expense?expense_id=xyz` → Delete expense
 
-> For Python implementation, see [`lambda/lambda_function.py`](lambda/lambda_function.py)
+> See Python implementation: [`lambda/lambda_function.py`](lambda/lambda_function.py)
 
 ### 4. API Gateway Configuration
 
@@ -50,22 +47,29 @@ Client ↔️ API Gateway ↔️ Lambda (Python) ↔️ DynamoDB
 curl -X POST https://your-api-id.execute-api.region.amazonaws.com/expense \
 -H "Content-Type: application/json" \
 -d '{"amount": 50, "category": "Food", "date": "2025-03-05"}'
+```
 
-📈 Monitoring & Optimization
-- Enable CloudWatch logs
+### 6. Monitoring & Optimization
+
+- Enable CloudWatch Logs
 - Tune Lambda memory and timeout settings
 - Use DynamoDB indexes if needed
 
-📚 Learnings & Outcomes
-✅ Gained hands-on experience with AWS serverless architecture
-✅ Deepened understanding of secure API design using API Gateway
-✅ Practiced data modeling and integration using Python & Boto3
-✅ Strengthened observability practices using CloudWatch
+### 7. Learnings & Outcomes
 
-📌 Future Enhancements
+- Gained hands-on experience with AWS serverless architecture
+- Deepened understanding of secure API design using API Gateway
+- Practiced data modeling and integration with Python & Boto3
+- Strengthened observability practices using Amazon CloudWatch
+
+### 8. Future Enhancements
+
 - Integrate authentication using Amazon Cognito
-- Add frontend using React/Next.js
+- Add a frontend using React/Next.js
 - Visualize expenses with Amazon QuickSight or Power BI
 
-Feel free to fork, star, or contribute!
-Built using AWS by Debasish
+> Feel free to fork, star, or contribute!\
+> Built using AWS by Debasish
+
+check about indentation
+
